@@ -1,4 +1,6 @@
-import './App.css';
+import './App.css'; 
+import Guesses from './Components/Guesses';
+import Keyboard from './Components/Keyboard'
 
 function App() {
   return (
