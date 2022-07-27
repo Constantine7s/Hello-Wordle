@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { defaultGuesses } from '../Words';
+import React from 'react';
 import Letter from './Letter';
 
 export default function Guesses() {
-  const [guesses, setGuesses] = useState(defaultGuesses);
-
   return (
     <div className="guesses">
       <div className="row">
@@ -29,7 +26,6 @@ export default function Guesses() {
         <Letter letterPosition={4} guessValue={2} />
       </div>
       <div className="row">
-        {' '}
         <Letter letterPosition={0} guessValue={3} />
         <Letter letterPosition={1} guessValue={3} />
         <Letter letterPosition={2} guessValue={3} />

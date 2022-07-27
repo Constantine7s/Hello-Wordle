@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { MyContext } from '../App';
 
-function Letter(letterPosition, guessValue) {
-  return (
-    <div>Letter</div>
-  )
+function Letter({ letterPosition, guessValue }) {
+  const { guesses } = useContext(MyContext);
+  const letter = guesses[letterPosition][guessValue];
+  return <div className="letter">{letter}</div>;
 }
 
-export default Letter
+export default Letter;

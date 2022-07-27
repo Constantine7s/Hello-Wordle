@@ -2,8 +2,7 @@ import React from 'react'
 
 function Keyboard() {
   return (
-    <div>Keyboard</div>
+    <div className="keyboard">Keyboard</div>
   )
 }
-
 export default Keyboard
