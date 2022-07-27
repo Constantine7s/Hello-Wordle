@@ -2,24 +2,19 @@ import React, { useContext } from 'react';
 import { MyContext } from '../App';
 
 function Key({ val, big }) {
-  const { guesses, setGuesses, currGuess, setCurrGuess } =
-    useContext(MyContext);
+  const {
+    onDelete,
+    onEnter,
+    onSelect,
+  } = useContext(MyContext);
 
   const chooseLetter = () => {
-    const board = [...guesses];
     if (val === 'ENTER') {
-      if (currGuess.letterPos !== 5) return;
-      setCurrGuess({ guess: currGuess.guess + 1, letterPos: 0 });
+      onEnter();
     } else if (val === 'DELETE') {
-      if (currGuess.letterPos === 0) return;
-      board[currGuess.guess][currGuess.letterPos - 1] = '';
-      setGuesses(board);
-      setCurrGuess({ ...currGuess, letterPos: currGuess.letterPos - 1 });
+      onDelete();
     } else {
-      if (currGuess.letterPos > 4) return;
-      board[currGuess.guess][currGuess.letterPos] = val;
-      setGuesses(board);
-      setCurrGuess({ ...currGuess, letterPos: currGuess.letterPos + 1 });
+      onSelect(val);
     }
   };
   return (
