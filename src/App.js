@@ -10,6 +10,7 @@ function App() {
   const [guesses, setGuesses] = useState(defaultGuesses);
   const [currGuess, setCurrGuess] = useState({guess: 0, letterPos: 0});
   const board = [...guesses];
+  let correctAnswer = "CRANE";
 
   const onSelect = (val) => {
     if (currGuess.letterPos > 4) return;
@@ -36,7 +37,7 @@ function App() {
       <nav>
         <h1>Hello Wordle</h1>
       </nav>
-      <MyContext.Provider value={{ guesses, setGuesses, currGuess, setCurrGuess, onDelete, onEnter, onSelect}}>
+      <MyContext.Provider value={{ guesses, setGuesses, currGuess, setCurrGuess, onDelete, onEnter, onSelect, correctAnswer}}>
         <section className="game">
           <Guesses />
           <Keyboard />
