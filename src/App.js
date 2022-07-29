@@ -14,6 +14,7 @@ function App() {
   const [currGuess, setCurrGuess] = useState({ guess: 0, letterPos: 0 });
   const board = [...guesses];
   const [wordSet, setWordSet] = useState(new Set());
+  const [usedLetters, setUsedLetters] = useState([]);
 
   let correctAnswer = 'CRANE';
 
@@ -72,6 +73,7 @@ function App() {
           onEnter,
           onSelect,
           correctAnswer,
+          usedLetters, setUsedLetters
         }}
       >
         <section className="game">
